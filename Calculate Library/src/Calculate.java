@@ -47,11 +47,18 @@ public class Calculate {
 		answer = b*b-(4*a*c);
 		return answer;
 	}
-	public static void toImproperFrac(int integer, int numerator, int denominator) {
-		//return improper fraction
-		int ansNumerator;
-		ansNumerator = (integer*denominator)+numerator;
-		System.out.println(ansNumerator + ("/") + denominator);
-		
+	public static void toImproperFrac(int whole, int numerator, int denominator) {
+		//return improper fraction from mixedNum
+		System.out.println(((whole*denominator)+numerator)+ "/" + denominator);
 	}
+	public static void toMixedNum(int numerator, int denominator) {
+		//return mixedNum from impropFrac
+		System.out.println(numerator/denominator + "_" + numerator%denominator +"/" + denominator);
+	}
+	public static void foil(int a,int b, int c, int d, char variable) {
+		//return results of foil method
+		System.out.println((a*c) + variable + "^2 + " + (a*d + b*c) + variable+ " + "+ b*d );
+	}
+	
+	
 }
