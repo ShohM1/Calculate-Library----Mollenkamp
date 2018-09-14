@@ -13,7 +13,10 @@ public class DoMath {
 		System.out.println(Calculate.toRadians(180));
 		Calculate.toImproperFrac(10,4,9);
 		Calculate.toMixedNum(19,3);
-		Calculate.foil(1, 4, 3, 4, 'n');
+		Calculate.foil(1, 4, 3, 4, "n");
+		System.out.println(Calculate.isDivisibleBy(11,3));
+		System.out.println(Calculate.absValue(-4.3));
+		System.out.println(Calculate.max(-1, 3));
 		
 	}
 

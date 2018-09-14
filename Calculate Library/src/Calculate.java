@@ -47,18 +47,57 @@ public class Calculate {
 		answer = b*b-(4*a*c);
 		return answer;
 	}
-	public static void toImproperFrac(int whole, int numerator, int denominator) {
+	public static String toImproperFrac(int whole, int numerator, int denominator) {
 		//return improper fraction from mixedNum
-		System.out.println(((whole*denominator)+numerator)+ "/" + denominator);
+		 System.out.println( ((whole*denominator)+numerator)+ "/" + denominator);
+		 return null;
+		
 	}
-	public static void toMixedNum(int numerator, int denominator) {
+	public static String toMixedNum(int numerator, int denominator) {
 		//return mixedNum from impropFrac
 		System.out.println(numerator/denominator + "_" + numerator%denominator +"/" + denominator);
+		return null;
 	}
-	public static void foil(int a,int b, int c, int d, char variable) {
+	public static String foil(int a,int b, int c, int d,String var) {
 		//return results of foil method
-		System.out.println((a*c) + variable + "^2 + " + (a*d + b*c) + variable+ " + "+ b*d );
+		System.out.println((a*c)+var + "^2 + " + (a*d + b*c) + var+ " + "+ b*d );
+		return null;
 	}
-	
+	public static boolean isDivisibleBy (int a, int b) {
+		//determine if integer is divisible or not
+		boolean Divisible= a%b == 0;
+		return Divisible;
+	}
+	public static double absValue (double number) {
+		if(number<0) {
+			number=-number;}
+		return number;
+	}
+	public static double max (double number1,double number2) {
+		if(number1>=number2) {
+			return number1;
+		} else {
+			return number2;
+		}
+	}
+	public static double max(double num1, double num2, double num3) {
+		//return highest of 3
+		double answer;
+		if(num1>=num2) {
+			if(num1>=num3) {
+				answer=num1;	
+			}else { 
+				answer=num3;
+			}
+		}
+		if(num2>num1) {
+			if(num2>=num3) {
+				answer=num2;
+			}else {
+				answer=num3;
+			}
+		}
+		return answer;
+	}
 	
 }
