@@ -17,6 +17,13 @@ public class DoMath {
 		System.out.println(Calculate.isDivisibleBy(11,3));
 		System.out.println(Calculate.absValue(-4.3));
 		System.out.println(Calculate.max(-1, 3));
+		System.out.println(Calculate.max(-1,-2,-3));
+		System.out.println(Calculate.min(1,2));
+		System.out.println(Calculate.round2(1.24546));
+		System.out.println(Calculate.exponent(-2, 9));
+		System.out.println(Calculate.factorial(6));
+		System.out.println(Calculate.isPrime(1009));
+		System.out.println(Calculate.gcf(25, 21));
 		
 	}
 
