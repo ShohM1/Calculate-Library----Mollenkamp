@@ -1,6 +1,6 @@
 /* This class contain methods that perform various math operations
  * @author Shoh Mollenkamp
- * @version September 6 2018
+ * @version September 17 2018
  */
 public class Calculate {
 	//returns the square of the input
@@ -89,8 +89,7 @@ public class Calculate {
 			}else { 
 				answer = num3;
 			}
-		}
-		if(num2>num1) {
+		}else {
 			if(num2>=num3) {
 				answer = num2;
 			}else {
@@ -135,8 +134,9 @@ public class Calculate {
 	}
 	public static boolean isPrime (int number) {
 		//see if it's divisible by variables other than itself and 1 
+		absValue(number);
 		int divisor=number-1;
-		while(Calculate.isDivisibleBy(number, divisor)==false) {
+		while(isDivisibleBy(number, divisor)==false) {
 			divisor--;
 		}
 		if(divisor==1) {
@@ -148,9 +148,20 @@ public class Calculate {
 	public static int gcf(int num1, int num2) {
 		//finds greatest common factor
 		int divisor=num1;
-		while(Calculate.isDivisibleBy(num1, divisor)==false||Calculate.isDivisibleBy(num2,divisor)==false){
+		while(isDivisibleBy(num1, divisor)==false||isDivisibleBy(num2,divisor)==false){
 			divisor--;
 		}
 		return divisor;
 	}
+	public static double sqrt(double number) {
+		double answer=1;
+		for(double i=1; (i*i) <= number; i++) {
+			answer=i;
+		}
+		for(double j=answer+0.1; (j*j)<=number; j=j+0.1) {
+			answer=j;
+		}
+		for(double k=answer+0.01)
+	}
 }
+
