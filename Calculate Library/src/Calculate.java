@@ -154,14 +154,12 @@ public class Calculate {
 		return divisor;
 	}
 	public static double sqrt(double number) {
-		double answer=1;
-		for(double i=1; (i*i) <= number; i++) {
-			answer=i;
+		double answer=0;
+		for(double i=answer;(i*i)<number; i=i+0.001) {
+		answer=i;
 		}
-		for(double j=answer+0.1; (j*j)<=number; j=j+0.1) {
-			answer=j;
-		}
-		for(double k=answer+0.01)
+		answer= round2(answer);
+		return answer;
 	}
 }
 
