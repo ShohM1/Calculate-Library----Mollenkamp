@@ -105,13 +105,15 @@ public class Calculate {
 			return num1;
 		}
 	}
+	
 	public static double round2 (double number) {
-		number= (int) (number*1000);
+		number = number*1000;
+		number= (int)number;
 		int thirdDecimal;
-		thirdDecimal = (int) number % 10;
+		thirdDecimal = (int)number % 10;
 		number = number/10;
-		number = (double)(int) number;
-		number = number/100;
+		number = (int)(double)(int)number;
+		number = (double)number/100;
 		if(thirdDecimal>=5) {
 			number = number + 0.01;
 		}
@@ -155,10 +157,10 @@ public class Calculate {
 	}
 	public static double sqrt(double number) {
 		double answer=0;
-		for(double i=answer;(i*i)<number; i=i+0.001) {
-		answer=i;
+		while((answer*answer)<number) {
+		answer = answer+0.001;
 		}
-		answer= round2(answer);
+		answer = round2(answer);
 		return answer;
 	}
 }
