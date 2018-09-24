@@ -107,16 +107,10 @@ public class Calculate {
 	}
 	
 	public static double round2 (double number) {
-		number = number*1000;
-		number= (int)number;
-		int thirdDecimal;
-		thirdDecimal = (int)number % 10;
-		number = number/10;
-		number = (int)(double)(int)number;
-		number = (double)number/100;
-		if(thirdDecimal>=5) {
-			number = number + 0.01;
-		}
+		number +=0.005;
+		number*=100;
+		number= (double)(int)number;
+		number/=100;
 		return number;
 	}
 	public static double exponent (double number, int exponent) {
