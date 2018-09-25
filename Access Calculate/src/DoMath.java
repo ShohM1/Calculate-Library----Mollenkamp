@@ -19,11 +19,12 @@ public class DoMath {
 		System.out.println(Calculate.max(-1, 4));
 		System.out.println(Calculate.max(-1,-2,-3));
 		System.out.println(Calculate.min(1,2));
-		System.out.println(Calculate.round2(2.4494));
+		System.out.println(Calculate.round2(-2.4494));
 		System.out.println(Calculate.exponent(-2, 9));
-		System.out.println(Calculate.factorial(6));
+		System.out.println(Calculate.factorial(4));
 		System.out.println(Calculate.isPrime(1009));
-		System.out.println(Calculate.gcf(27, 21));
+		System.out.println(Calculate.gcf(0, 13));
 		System.out.println(Calculate.sqrt(6));
+		Calculate.quadForm(1,2,3);
 	}
 }

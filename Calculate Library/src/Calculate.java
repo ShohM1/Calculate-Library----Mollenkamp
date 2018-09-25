@@ -42,7 +42,7 @@ public class Calculate {
 		return answer;
 	}
 	public static double discriminant (double a, double b, double c) {
-		//return discriminant
+		//return discriminant of the equation
 		double answer;
 		answer = b*b-(4*a*c);
 		return answer;
@@ -63,17 +63,20 @@ public class Calculate {
 		System.out.println((a*c)+var + "^2 + " + (a*d + b*c) + var+ " + "+ b*d );
 		return null;
 	}
-	public static boolean isDivisibleBy (int a, int b) {
+	public static boolean isDivisibleBy (int number, int divisor) {
 		//determine if integer is divisible or not
-		boolean Divisible= a%b == 0;
+		if(divisor==0) throw new IllegalArgumentException("Cannot divide by 0");
+		boolean Divisible= number%divisor == 0;
 		return Divisible;
 	}
 	public static double absValue (double number) {
+		//take the absolute value of the number by making negative positive
 		if(number<0) {
 			number=-number;}
 		return number;
 	}
 	public static double max (double number1,double number2) {
+		//return higher number of 2
 		if(number1>=number2) {
 			return number1;
 		} else {
@@ -81,7 +84,7 @@ public class Calculate {
 		}
 	}
 	public static double max(double num1, double num2, double num3) {
-		//return highest of 3
+		//return highest of 3 by comparing each value
 		double answer=0; 
 		if(num1>=num2) {
 			if(num1>=num3) {
@@ -98,22 +101,37 @@ public class Calculate {
 		}
 		return answer;
 	}
-	public static double min (double num1, double num2) {
+	public static int min (int num1, int num2) {
+		//return lower number of two
 		if(num1>=num2) {
 			return num2;
 		}else {
 			return num1;
 		}
 	}
-	
+	public static double min (double num1, double num2) {
+		//return lower number of two
+		if(num1>=num2) {
+			return num2;
+		}else {
+			return num1;
+		}
+	}
 	public static double round2 (double number) {
-		number +=0.005;
+		//round the value to two decimal points by truncating values after two decimals
+		if(number>0) {
+			number +=0.005;
+		}else {
+			number -=0.005;
+		}
 		number*=100;
 		number= (double)(int)number;
 		number/=100;
 		return number;
 	}
 	public static double exponent (double number, int exponent) {
+		//return value of exponent by keep multiplying the number for exponent numbers of time
+		if(exponent<0) throw new IllegalArgumentException("this method does not accept negative exponent");
 		double answer=1;
 		for (int i = 1; i<=exponent; i++) {
 			answer = answer*number;
@@ -121,7 +139,8 @@ public class Calculate {
 		return answer;
 	}
 	public static int factorial (int number) {
-		//number!
+		//number! by multiplying numbers right below until multiplying to 1
+		if(number<0)throw new IllegalArgumentException("Negative numbers do not have factorial");
 		int answer = 1;
 		for (int i=number; i>=1; i--) {
 			answer = answer*i;
@@ -142,20 +161,44 @@ public class Calculate {
 		}
 	}
 	public static int gcf(int num1, int num2) {
-		//finds greatest common factor
+		//finds greatest common factor by checking the divisibility of both values
 		int divisor=num1;
-		while(isDivisibleBy(num1, divisor)==false||isDivisibleBy(num2,divisor)==false){
+		if(num1==0) {
+			divisor=num2;
+		}else{
+			while(isDivisibleBy(num1, divisor)==false||isDivisibleBy(num2,divisor)==false){
+		
 			divisor--;
+			}
 		}
 		return divisor;
 	}
 	public static double sqrt(double number) {
+		//return square root by multiplying a number until square is equal to the origle number and then round2
+		if(number<0) throw new IllegalArgumentException("no real solution");
 		double answer=0;
 		while((answer*answer)<number) {
 		answer = answer+0.001;
 		}
 		answer = round2(answer);
 		return answer;
+	}
+	public static String quadForm(int a, int b, int c) {
+		double root1=0;
+		double root2=0;
+		if(discriminant(a,b,c)<0) {
+			System.out.println("no real roots");
+		}else {
+			root1=(-b+sqrt(discriminant(a,b,c)))/(2*a);
+			root2=(-b-sqrt(discriminant(a,b,c)))/(2*a);
+			round2(root1);
+			round2(root2);
+			if(root1==root2) {
+				System.out.println(root1);
+			}else {
+				System.out.println(min(root1,root2) + " and " + max(root1,root2));
+			}
+		}
 	}
 }
 
