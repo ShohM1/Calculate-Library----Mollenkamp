@@ -49,19 +49,15 @@ public class Calculate {
 	}
 	public static String toImproperFrac(int whole, int numerator, int denominator) {
 		//return improper fraction from mixedNum
-		 System.out.println( ((whole*denominator)+numerator)+ "/" + denominator);
-		 return null;
-		
+		 return ((whole*denominator)+numerator)+ "/" + denominator;
 	}
 	public static String toMixedNum(int numerator, int denominator) {
 		//return mixedNum from impropFrac
-		System.out.println(numerator/denominator + "_" + numerator%denominator +"/" + denominator);
-		return null;
+		return numerator/denominator + "_" + numerator%denominator +"/" + denominator;
 	}
 	public static String foil(int a,int b, int c, int d,String var) {
 		//return results of foil method
-		System.out.println((a*c)+var + "^2 + " + (a*d + b*c) + var+ " + "+ b*d );
-		return null;
+		return (a*c)+ var + "^2 + " + (a*d)+(b*c) + var + " + " + (b*d);
 	}
 	public static boolean isDivisibleBy (int number, int divisor) {
 		//determine if integer is divisible or not
@@ -184,21 +180,23 @@ public class Calculate {
 		return answer;
 	}
 	public static String quadForm(int a, int b, int c) {
+		//return the roots of a quadratic equation by applying quadratic formula
 		double root1=0;
 		double root2=0;
 		if(discriminant(a,b,c)<0) {
-			System.out.println("no real roots");
+			return "no real roots";
 		}else {
 			root1=(-b+sqrt(discriminant(a,b,c)))/(2*a);
 			root2=(-b-sqrt(discriminant(a,b,c)))/(2*a);
 			round2(root1);
 			round2(root2);
 			if(root1==root2) {
-				System.out.println(root1);
+				return root1+"";
 			}else {
-				System.out.println(min(root1,root2) + " and " + max(root1,root2));
+				return min(root1,root2) + " and " + max(root1,root2);
 			}
 		}
+		
 	}
 }
 
