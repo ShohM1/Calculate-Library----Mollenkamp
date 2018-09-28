@@ -145,13 +145,19 @@ public class Calculate {
 	}
 	public static boolean isPrime (int number) {
 		//see if it's divisible by variables other than itself and 1 
-		absValue(number);
 		int divisor=number-1;
+		if(number<=1) {
+			divisor=1;
+		}
 		while(isDivisibleBy(number, divisor)==false) {
 			divisor--;
 		}
 		if(divisor==1) {
-			return true;
+			if(number<=1) {
+				return false;
+			}else {
+				return true;
+			}
 		}else {
 			return false;
 		}
@@ -183,6 +189,7 @@ public class Calculate {
 		//return the roots of a quadratic equation by applying quadratic formula
 		double root1=0;
 		double root2=0;
+		if(a==0)throw new IllegalArgumentException("not quadratic");
 		if(discriminant(a,b,c)<0) {
 			return "no real roots";
 		}else {
