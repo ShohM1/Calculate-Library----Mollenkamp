@@ -164,6 +164,8 @@ public class Calculate {
 	}
 	public static int gcf(int num1, int num2) {
 		//finds greatest common factor by checking the divisibility of both values
+		num1= (int) absValue(num1);
+		num2= (int) absValue(num2);
 		int divisor=num1;
 		if(num1==0) {
 			divisor=num2;
