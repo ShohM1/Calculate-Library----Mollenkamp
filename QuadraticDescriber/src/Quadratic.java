@@ -57,9 +57,9 @@ public class Quadratic {
 			round2(root1);
 			round2(root2);
 			if(root1==root2) {
-				return root1+"";
+				return round2(root1)+"";
 			}else {
-				return min(root1,root2) + " and " + max(root1,root2);
+				return round2(min(root1,root2)) + " and " + round2(max(root1,root2));
 			}
 		}
 	}
@@ -73,9 +73,10 @@ public class Quadratic {
 		}
 		double vertexX=round2(-b/(2*a));
 		double vertexY=round2(a*vertexX*vertexX+c);
+		String axisSym = "Axis of Symmetry" + round2(vertexX);
 		String vertexLocation = "Vertex: ("+vertexX+", "+vertexY+")";
 		String xIntercept = "x-intercept(s): "+quadForm(a,b,c);
 		String yIntercept = "y-intercept: "+c;
-		return directionOpen+"\n"+vertexLocation+"\n" + xIntercept+"\n"+ yIntercept;
+		return directionOpen+"\n"+axisSym+"\n"+vertexLocation+"\n" + xIntercept+"\n"+ yIntercept;
 	}
 }

@@ -200,9 +200,9 @@ public class Calculate {
 			round2(root1);
 			round2(root2);
 			if(root1==root2) {
-				return root1+"";
+				return round2(root1)+"";
 			}else {
-				return min(root1,root2) + " and " + max(root1,root2);
+				return round2(min(root1,root2)) + " and " + round2(max(root1,root2));
 			}
 		}
 		
