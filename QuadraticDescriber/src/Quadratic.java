@@ -73,7 +73,7 @@ public class Quadratic {
 		}
 		double vertexX=round2(-b/(2*a));
 		double vertexY=round2(a*vertexX*vertexX+c);
-		String axisSym = "Axis of Symmetry" + round2(vertexX);
+		String axisSym = "Axis of Symmetry: " + round2(vertexX);
 		String vertexLocation = "Vertex: ("+vertexX+", "+vertexY+")";
 		String xIntercept = "x-intercept(s): "+quadForm(a,b,c);
 		String yIntercept = "y-intercept: "+c;
