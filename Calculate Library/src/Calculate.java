@@ -197,8 +197,6 @@ public class Calculate {
 		}else {
 			root1=(-b+sqrt(discriminant(a,b,c)))/(2*a);
 			root2=(-b-sqrt(discriminant(a,b,c)))/(2*a);
-			round2(root1);
-			round2(root2);
 			if(root1==root2) {
 				return round2(root1)+"";
 			}else {
